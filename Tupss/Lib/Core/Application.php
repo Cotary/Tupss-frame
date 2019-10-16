@@ -17,17 +17,17 @@ final class Application
     private static function init()
     {
         //加载配置项（用户配置的优先级更高）
-        C(include CONFIG_PATH . '/config.php');
+        C(require CONFIG_PATH . '/config.php');
         $userPath = APP_CONFIG_PATH . '/config.php';
 
-        $userConfig = <<<str
+        $userConfig = <<<EOF
 <?php
 return array(
 //配置项=>配置值
 );
-str;
+EOF;
         is_file($userPath) || file_put_contents($userPath, $userConfig);
-        C(include $userPath);
+        C(require $userPath);
 
         //设置默认时区
         date_default_timezone_set(C('DEFAULT_TIME_ZONE'));
