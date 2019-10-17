@@ -81,6 +81,10 @@ EOF;
 
     private static function _app_run()
     {
+echo 1;
+             $track=debug_backtrace();
+             debug_print_backtrace();
+
 
     }
 }
