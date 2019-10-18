@@ -81,9 +81,18 @@ EOF;
 
     private static function _app_run()
     {
-echo 1;
+echo 1222;
              $track=debug_backtrace();
+             ob_start();
+
+             echo 999;
+             var_dump('fasd');
+             //return 123;
              debug_print_backtrace();
+             $aa=ob_get_clean();
+             print_r($track);
+             print_r($aa);
+
 
 
     }
